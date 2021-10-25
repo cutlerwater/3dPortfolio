@@ -56,7 +56,7 @@ function addStar() {
   scene.add(star);
 }
 
-Array(200).fill().forEach(addStar);
+Array(400).fill().forEach(addStar);
 
 // Background
 
@@ -65,43 +65,55 @@ scene.background = spaceTexture;
 
 // Avatar
 
-const jeffTexture = new THREE.TextureLoader().load('jeff.png');
+const garrettTexture = new THREE.TextureLoader().load('AISProfile.jpg');
 
-const jeff = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: jeffTexture }));
+const garrett = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: garrettTexture }));
 
-scene.add(jeff);
+scene.add(garrett);
 
-// Moon
+// Earth
 
-const moonTexture = new THREE.TextureLoader().load('moon.jpg');
+const earthTexture = new THREE.TextureLoader().load('earth.jpg');
 const normalTexture = new THREE.TextureLoader().load('normal.jpg');
 
-const moon = new THREE.Mesh(
+const earth = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshStandardMaterial({
-    map: moonTexture,
+    map: earthTexture,
     normalMap: normalTexture,
   })
 );
 
-scene.add(moon);
 
-moon.position.z = 30;
-moon.position.setX(-10);
 
-jeff.position.z = -5;
-jeff.position.x = 2;
+scene.add(earth);
+
+
+
+
+earth.position.z = 30;
+earth.position.setX(-10);
+
+/* moon.position.z = 100;
+moon.position.setX(60); */
+
+garrett.position.z = -5;
+garrett.position.x = 2;
 
 // Scroll Animation
 
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
-  moon.rotation.x += 0.05;
-  moon.rotation.y += 0.075;
-  moon.rotation.z += 0.05;
+  earth.rotation.x += 0.05;
+  earth.rotation.y += 0.075;
+  earth.rotation.z += 0.05;
 
-  jeff.rotation.y += 0.01;
-  jeff.rotation.z += 0.01;
+/*   moon.rotation.x += 0.1;
+  moon.rotation.y += 0.035;
+  moon.rotation.z += 0.07; */
+
+  garrett.rotation.y += 0.01;
+  garrett.rotation.z += 0.01;
 
   camera.position.z = t * -0.01;
   camera.position.x = t * -0.0002;
@@ -120,8 +132,8 @@ function animate() {
   torus.rotation.y += 0.005;
   torus.rotation.z += 0.01;
 
-  moon.rotation.x += 0.005;
-
+  earth.rotation.x += 0.005;
+  // moon.rotation.x += 0.005;
   // controls.update();
 
   renderer.render(scene, camera);
