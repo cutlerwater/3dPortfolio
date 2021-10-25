@@ -60,12 +60,12 @@ Array(400).fill().forEach(addStar);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+const spaceTexture = new THREE.TextureLoader().load('./images/space.jpg');
 scene.background = spaceTexture;
 
 // Avatar
 
-const garrettTexture = new THREE.TextureLoader().load('AISProfile.jpg');
+const garrettTexture = new THREE.TextureLoader().load('./images/AISProfile.jpg');
 
 const garrett = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: garrettTexture }));
 
@@ -73,8 +73,8 @@ scene.add(garrett);
 
 // Earth
 
-const earthTexture = new THREE.TextureLoader().load('earth.jpg');
-const normalTexture = new THREE.TextureLoader().load('normal.jpg');
+const earthTexture = new THREE.TextureLoader().load('./images/earth.jpg');
+const normalTexture = new THREE.TextureLoader().load('./images/normal.jpg');
 
 const earth = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
