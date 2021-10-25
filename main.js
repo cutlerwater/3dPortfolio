@@ -88,6 +88,21 @@ const earth = new THREE.Mesh(
 
 scene.add(earth);
 
+/* const moonTexture = new THREE.TextureLoader().load('moon.jpg');
+const normalTexture = new THREE.TextureLoader().load('normal.jpg');
+
+const moon = new THREE.Mesh(
+  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: moonTexture,
+    normalMap: normalTexture,
+  })
+);
+
+
+
+scene.add(moon); */
+
 
 
 
@@ -108,7 +123,7 @@ function moveCamera() {
   earth.rotation.y += 0.075;
   earth.rotation.z += 0.05;
 
-/*   moon.rotation.x += 0.1;
+  /* moon.rotation.x += 0.1;
   moon.rotation.y += 0.035;
   moon.rotation.z += 0.07; */
 
